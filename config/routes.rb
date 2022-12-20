@@ -1,4 +1,5 @@
 # Rails.application.routes.draw do
+  resources :users
 #   resources :mangas
 #   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -17,4 +18,10 @@ Rails.application.routes.draw do
   end
 
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
+
+  root "mangas#index"
+
+  resources :mangas, only: [:index]
+
+
 end

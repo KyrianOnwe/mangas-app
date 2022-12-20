@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [mangas, setMangas] = useState([])
+ useEffect(() => {
+   fetch('/mangas')
+    .then(res => res.json())
+    .then(data => setMangas(data))  
+ }, [])
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {mangas.map((manga) => <h4 key={manga.title}>{manga.title}</h4>)}
+ 
     </div>
   );
 }
