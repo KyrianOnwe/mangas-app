@@ -1,5 +1,5 @@
 # Rails.application.routes.draw do
-  resources :users
+  
 #   resources :mangas
 #   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -22,6 +22,5 @@ Rails.application.routes.draw do
   root "mangas#index"
 
   resources :mangas, only: [:index]
-
-
+  resources :users, only: [:index]
 end
