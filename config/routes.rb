@@ -23,4 +23,14 @@ Rails.application.routes.draw do
 
   resources :mangas, only: [:index]
   resources :users, only: [:index]
+  resources :reviews
+  
+
+
+
+  
+
+  
+  
+
 end
