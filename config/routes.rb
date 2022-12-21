@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   root "mangas#index"
 
   resources :mangas, only: [:index]
-  resources :users, only: [:index]
+  resources :users, only: [:index, :create, :show]
   resources :reviews
   
 
